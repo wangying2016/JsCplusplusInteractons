@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<skin>
+  	<imglist name="skin_traymenu_icons"	src="img:traymenu_icons" states="9"/>
+    <imglist name="skin_chrome_tab_new" src="img:png_chrome_tab_new" states ="3" />
+    <imglist name="skin_chrome_tab_close" src="img:png_chrome_tab_close" states="3" />
+    <imglist name="skin_webbtn_back" src="img:png_webbtn_back" states="4" />
+    <imglist name="skin_webbtn_fore" src="img:png_webbtn_fore" states="4" />
+    <imglist name="skin_webbtn_refresh" src="img:png_webbtn_refresh" states="4" />
+    <imglist name="skin_bkgnd_1" src="img:jpg_bkgnd_1" states="1" />
+</skin>

@@ -1,0 +1,41 @@
+﻿<SOUI name="mainWindow" title="@string/title" bigIcon="ICON_LOGO:32" smallIcon="ICON_LOGO:16" width="600" height="400"  margin="20,5,5,5"  resizable="1" wndType="appMain"
+appWnd="1"
+translucent="1" 
+>
+  <root skin="skin_bkgnd_1" cache="1">
+    <caption pos="0,0,-0,30" show="1" font="adding:0">
+      <icon pos="10,8" src="ICON_LOGO:16"/>
+      <text pos="29,9" colorText="#ffffff">浏览器demo</text>
+      <button pos="[80,0,@90,@30" name="button_run_js" focusable="0" alpha="120" >run js</button>
+      <button pos="[40,0,@90,@30" name="button_run_c_plus_plus" focusable="0" alpha="120" >run c++</button>
+      <imgbtn name="btn_close" skin="_skin.sys.btn.close"    pos="-45,0" tip="close" animate="1"/>
+      <imgbtn name="btn_max" skin="_skin.sys.btn.maximize"  pos="-83,0" animate="1" />
+      <imgbtn name="btn_restore" skin="_skin.sys.btn.restore"  pos="-83,0" show="0" animate="1" />
+      <imgbtn name="btn_min" skin="_skin.sys.btn.minimize" pos="-121,0" animate="1" />
+    </caption>
+
+    <!--标签页-->
+    <chromeTabCtrl pos="5,[2,-5,@25" name="chromeTab" tabDesiredSize="150" enalbeDrag="1" >
+      <tabStyle skin="_skin.sys.btn.normal" alpha="120" />
+      <newBtnStyle size="28,21" skin="skin_chrome_tab_new" />
+      <closeBtnStyle pos="-2,2" offset="-1,0" skin="skin_chrome_tab_close" />
+      <tabs>
+        <chromeTab tip="the tab #1">标签页1</chromeTab>
+      </tabs>
+    </chromeTabCtrl>
+    
+    <!--地址栏、工具按钮-->
+    <window pos="5,[2,-5,@28" name="webkit_toolbar" colorBkgnd="#AAAAAA">
+      <imgbtn pos="0,0" name="btn_webkit_back" skin="skin_webbtn_back" />
+      <imgbtn pos="[5,0" name="btn_webkit_forward" skin="skin_webbtn_fore" />
+      <imgbtn pos="[5,0" name="btn_webkit_refresh" skin="skin_webbtn_refresh" />
+      <edit pos="[5,0,-100,25" class="cls_edit" name="edit_url">http://www.baidu.com</edit>
+      <button pos="-80,0,-0,28" name="btn_webkit_go" focusable="0" alpha="120">Go</button>
+    </window>
+    
+    <!--窗口浏览器-->
+    <window pos="5,[2,-5,-5">
+       <wkeWebkit pos="0,0,-0,-0" name="wke_test" url="http://www.baidu.com/" />
+    </window>
+  </root>
+</SOUI>
