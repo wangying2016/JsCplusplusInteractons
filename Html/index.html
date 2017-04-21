@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试 js 调用 C++ 代码网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+    <script type="text/javascript">
+        function CallCPlusPlus() {
+            msgBox("点击图片由 js 调用 C++ 弹窗", "提示");
+        }
+    </script>
+
+</head>
+
+
+<body>
+    <img id="img_track_event" class="" src="images/bd_logo.png" width="300" height="128" onmousedown="CallCPlusPlus()" />
+    <p>点击上图，由 js 函数调用 C++ 函数实现弹窗</p>
+    <div>
+        <div>html中，由 onmousedown 触发 js 函数 :</div>
+        <div>
+            function CallCPlusPlus() {
+            msgBox("点击图片由 js 调用 C++ 弹窗", "测试");
+            }
+        </div>
+        <div>而这个函数中的 msgBox 是一个标签，标记了对应的 C++ 中的一个全局函数：</div>
+        <div>
+            jsValue JS_CALL jsMsgBox(jsExecState es)
+            {
+            const wchar_t *text = jsToStringW(es, jsArg(es, 0));
+            const wchar_t *title = jsToStringW(es, jsArg(es, 1));
+
+            SOUI::SMessageBox(NULL, text, title, MB_OK);
+
+            return jsUndefined();
+            }
+        </div>
+        <p>这个函数由 es 传递 js 中的 标签 “msgBox” 传来的参数，然后 C++ 函数处理弹窗</p>
+
+    </div>
+
+</body>
+</html>
